@@ -8,7 +8,7 @@ Library     DateTime
 
 *** Keywords ***
 Open browser and maximize
-    Open Browser     http://127.0.0.1:5000/       chrome
+    Open Browser     http://localhost:8080/       chrome
     maximize browser window
     #set selenium speed       1 sec
 
@@ -19,10 +19,8 @@ Close
 
 Registration
     [Arguments]     ${Expectation}      &{User}
-    #page should contain  index page
     click element   xpath://a[@href='/register']
     page should contain     Register
-    #${User_name}=    Get From Dictionary     ${User}     Username
     input text      xpath://input[@id='username']   ${User.Username}
     input text      xpath://input[@id='password']   ${User.Password}
     input text      xpath://input[@id='firstname']  ${User.FirstName}

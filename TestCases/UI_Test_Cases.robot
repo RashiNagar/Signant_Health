@@ -5,8 +5,6 @@ Test Setup  Open browser and maximize
 Test Teardown   Close
 
 *** Variables ***
-${url}      http://127.0.0.1:5000/
-${browser}      chrome
 
 
 *** Test Cases ***
@@ -50,9 +48,4 @@ Login_with_Invalid_Credentials
     input text      xpath://input[@id='password']   ${Password}
     click button    xpath://input[@value='Log In']
     page should contain  You provided incorrect login details
-
-
-
-
-
 
